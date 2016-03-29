@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "angular": "~1.3.0",
-    "slick-carousel": "https://github.com/labcodes/slick.git#2b523259db7c057853cc863931fe962a7e054d26"
+    "slick-carousel": "https://github.com/labcodes/slick.git#cc05f1edd421be033713b9b7003bff20e346c052"
   },
   "author": {
     "name": "Vasyl Stanislavchuk"
