@@ -156,6 +156,9 @@ angular.module('slick', []).directive('slick', [
         } else {
           return initializeSlick();
         }
+        scope.$on("slick-refresh", function () {
+          initializeSlick();
+        });
       }
     };
   }
