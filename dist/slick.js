@@ -126,7 +126,18 @@ angular.module('slick', []).directive('slick', [
             });
             slider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
               if (scope.onAfterChange) {
-                scope.onAfterChange();
+                scope.onAfterChange({event: event, slick: slick, currentSlide: currentSlide, nextSlide: nextSlide});
+              }
+              if (currentIndex != null) {
+                return scope.$apply(function () {
+                  currentIndex = currentSlide;
+                  return scope.currentIndex = currentSlide;
+                });
+              }
+            });
+            slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+              if (scope.onBeforeChange) {
+                scope.onBeforeChange({event: event, slick: slick, currentSlide: currentSlide, nextSlide: nextSlide});
               }
               if (currentIndex != null) {
                 return scope.$apply(function () {
